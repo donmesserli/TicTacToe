@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:TicTacToe.Controls"
+             mc:Ignorable="d" x:Class="TicTacToe.MainPage">
+    <!-- TouchableBoxView names are "box(col)(row)". These become variables in the
+    code-behind file MainPage.xaml.cs. See the comment at the  top of that file. -->
+    <!-- TouchableBoxView CommandParameters are strings with a format of "(col)(row)" -->
+    <Grid x:Name="outergrid"
+                  Padding="0, 0, 0, 0"
+                  ColumnSpacing="0"
+                  RowSpacing="0"
+                  BackgroundColor="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="90*" />
+        </Grid.RowDefinitions>
+        <Grid x:Name="topgrid"
+              Padding="0, 0, 0, 0"
+              ColumnSpacing="0"
+              RowSpacing="0"
+              BackgroundColor="White"
+              Grid.Column="0"
+              Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80*" />
+                <ColumnDefinition Width="20*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />            
+            </Grid.RowDefinitions>
+            <Label x:Name="messageLabel"
+                   BackgroundColor="Green"
+                   Margin="20, 0, 10, 0"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="CenterAndExpand"                   
+                   TextColor="White"
+                   HorizontalTextAlignment="Center"
+                   FontSize="Large"
+                   Grid.Column="0"
+                   Grid.Row="0">
+            </Label>
+            <Button x:Name="newgamebutton"
+                    Text="New Game"
+                    Command="{Binding NewGameCommand}"
+                    Grid.Column="1"
+                    Grid.Row="0"/>
+        </Grid>
+        <Grid x:Name="bottomgrid"
+              Padding="0, 0, 0, 0"
+              ColumnSpacing="10"
+              RowSpacing="10"
+              BackgroundColor="Black"
+              Grid.Column="0"
+              Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="33*" />
+                <ColumnDefinition Width="33*" />
+                <ColumnDefinition Width="33*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33*" />
+                <RowDefinition Height="33*" />
+                <RowDefinition Height="33*" />
+            </Grid.RowDefinitions>
+            <controls:TouchableBoxView x:Name="box00"
+                                       BackgroundColor="White"
+                                       Command="{Binding SquareTouchedCommand}"
+                                       CommandParameter="00"
+                                       Grid.Column="0"
+                                       Grid.Row="0">
+            </controls:TouchableBoxView>
+            <Image x:Name="image00"
+                   InputTransparent="True"
+                   Grid.Column="0"
+                   Grid.Row="0"/>                   
+            <controls:TouchableBoxView x:Name="box10"
+                                       BackgroundColor="White"
+                                       Command="{Binding SquareTouchedCommand}"
+                                       CommandParameter="10"
+                                       Grid.Column="1"
+                                       Grid.Row="0">
+            </controls:TouchableBoxView>
+            <Image x:Name="image10"
+                   InputTransparent="True"
+                   Grid.Column="1"
+                   Grid.Row="0"/>      
+            <controls:TouchableBoxView x:Name="box20"
+                                       BackgroundColor="White"
+                                       Command="{Binding SquareTouchedCommand}"
+                                       CommandParameter="20"
+                                       Grid.Column="2"
+                                       Grid.Row="0">                 
+            </controls:TouchableBoxView>
+            <Image x:Name="image20"
+                InputTransparent="True"
+                Grid.Column="2"
+                Grid.Row="0"/> 
+            <controls:TouchableBoxView x:Name="box01"
+                                       BackgroundColor="White"
+                                       Command="{Binding SquareTouchedCommand}"
+                                       CommandParameter="01"
+                                       Grid.Column="0"
+                                       Grid.Row="1">
+            </controls:TouchableBoxView>
+            <Image x:Name="image01"
+                InputTransparent="True"
+                Grid.Column="0"
+                Grid.Row="1"/> 
+            <controls:TouchableBoxView x:Name="box11"
+                                       BackgroundColor="White"
+                                       Command="{Binding SquareTouchedCommand}"
+                                       CommandParameter="11"
+                                       Grid.Column="1"
+                                       Grid.Row="1">
+            </controls:TouchableBoxView>
+            <Image x:Name="image11"
+                InputTransparent="True"
+                Grid.Column="1"
+                Grid.Row="1"/> 
+            <controls:TouchableBoxView x:Name="box21"
+                                       BackgroundColor="White"
+                                       Command="{Binding SquareTouchedCommand}"
+                                       CommandParameter="21"
+                                       Grid.Column="2"
+                                       Grid.Row="1">
+            </controls:TouchableBoxView>
+            <Image x:Name="image21"
+                InputTransparent="True"
+                Grid.Column="2"
+                Grid.Row="1"/> 
+            <controls:TouchableBoxView x:Name="box02"
+                                       BackgroundColor="White"
+                                       Command="{Binding SquareTouchedCommand}"
+                                       CommandParameter="02"
+                                       Grid.Column="0"
+                                       Grid.Row="2">
+            </controls:TouchableBoxView>
+            <Image x:Name="image02"
+                InputTransparent="True"
+                Grid.Column="0"
+                Grid.Row="2"/> 
+            <controls:TouchableBoxView x:Name="box12"
+                                       BackgroundColor="White"
+                                       Command="{Binding SquareTouchedCommand}"
+                                       CommandParameter="12"
+                                       Grid.Column="1"
+                                       Grid.Row="2">
+            </controls:TouchableBoxView>
+            <Image x:Name="image12"
+                InputTransparent="True"
+                Grid.Column="1"
+                Grid.Row="2"/> 
+            <controls:TouchableBoxView x:Name="box22"
+                                       BackgroundColor="White"
+                                       Command="{Binding SquareTouchedCommand}"
+                                       CommandParameter="22"
+                                       Grid.Column="2"
+                                       Grid.Row="2">
+            </controls:TouchableBoxView>
+            <Image x:Name="image22"
+                InputTransparent="True"
+                Grid.Column="2"
+                Grid.Row="2"/> 
+        </Grid>
+    </Grid>
+</ContentPage>
